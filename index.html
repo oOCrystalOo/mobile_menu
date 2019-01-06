@@ -52,11 +52,27 @@
     <script>
         jQuery(document).ready(function ($) {
             $('a.menu_button').on('click', function () {
+                $('i', this).css({
+                    'transition': '.4s linear',
+                    '-webkit-transform': 'rotate(360deg)',
+                    '-moz-transform': 'rotate(360deg)',
+                    '-ms-transform': 'rotate(360deg)',
+                    '-o-transform': 'rotate(360deg)',
+                    'transform': 'rotate(360deg)'
+                });
+
                 $('div.overlay').addClass('active');
                 $('div.mobile_nav').show().animate({ right: 0 }, {
                     duration: 500,
                     complete: function () {
-                        //calculate_menu_div();
+                        $('a.menu_button i').css({
+                            'transition': '',
+                            '-webkit-transform': '',
+                            '-moz-transform': '',
+                            '-ms-transform': '',
+                            '-o-transform': '',
+                            'transform': ''
+                        });
                     }
                 });
             });
@@ -73,11 +89,27 @@
                 });
             });
             $('div.menu_header').on('click', function () {
+                $('i', this).css({
+                    'transition': '.4s linear',
+                    '-webkit-transform': 'rotate(360deg)',
+                    '-moz-transform': 'rotate(360deg)',
+                    '-ms-transform': 'rotate(360deg)',
+                    '-o-transform': 'rotate(360deg)',
+                    'transform': 'rotate(360deg)'
+                });
                 $('div.mobile_nav').animate({ right: -999 }, {
                     duration: 500,
                     complete: function () {
                         $(this).hide();
                         $('div.overlay').removeClass('active');
+                        $('div.menu_header i').css({
+                            'transition': '',
+                            '-webkit-transform': '',
+                            '-moz-transform': '',
+                            '-ms-transform': '',
+                            '-o-transform': '',
+                            'transform': ''
+                        });
                     }
                 });
             });
